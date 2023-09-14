@@ -6,7 +6,7 @@ const connection = require('./config/database');
 
 const categoriesController = require('./controllers/CategoriesController');
 const articlesController = require('./controllers/ArticlesController');
-const usersController = require('./controllers/UserController');
+const usersController = require('./controllers/UsersController');
 
 const Article = require('./models/Articles');
 const Category = require('./models/Category');
