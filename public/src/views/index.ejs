@@ -1,0 +1,49 @@
+<%- include('partials/header') %> <%- include('partials/homenavbar') %>
+<body>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Bienvenido</h1>
+      <p class="lead">
+        Este es un proyecto enfocado al Back-End. Utilizando diversas
+        herramientas, como EJS, Node.JS, Express, Sequelize, MySql, entre otros.
+      </p>
+      <hr class="my-4" />
+    </div>
+  </div>
+  <div class="container">
+    <% result.articles.rows.forEach(article => { %>
+        <div class="colg-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="<%= article.imageUrl %>"
+              alt="imagen url"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= article.title %></h5>
+              <p class="card-text"><%- article.body.substr(0, 300) %>...</p>
+              <br />
+              <a
+                href="/<%= article.slug %>"
+                class="btn btn-outline-success btn-sm"
+                >Leer Articulo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+    <div class="row mt-2 mb-5">
+      <div class="col col-12">
+        <a
+          style="float: right"
+          class="btn btn-secondary"
+          href="/articles/page/2"
+          >Next</a
+        >
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('partials/footer') %>
