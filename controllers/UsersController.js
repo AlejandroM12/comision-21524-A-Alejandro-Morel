@@ -33,7 +33,6 @@ router.post('/users/create', (req, res) => {
         .catch((err) => {
           res.redirect('/');
         });
-      /* res.json({email, password}) ISSO É UM TESTE DE ENVIO */
     } else {
       res.redirect('/admin/users/create');
     }
@@ -50,8 +49,6 @@ router.post('/authenticate', (req, res) => {
 
   User.findOne({ where: { email: email } }).then((user) => {
     if (user != undefined) {
-      // Se existe um usuário com esse e-mail
-      // Validar senha
       var correct = bcrypt.compareSync(password, user.password);
       if (correct) {
         req.session.user = {
