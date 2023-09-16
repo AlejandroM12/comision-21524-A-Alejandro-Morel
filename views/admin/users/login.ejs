@@ -1,0 +1,56 @@
+<%- include('../../partials/header') %>
+<body>
+  <div class="container mb-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="card my-5">
+          <form
+            action="/authenticate"
+            class="card-body cardbody-color p-lg-5"
+            method="POST"
+          >
+            <div
+              class="d-flex align-items-center justify-content-center text-center m-auto"
+            >
+              <img
+                src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png"
+                class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                width="200px"
+                alt="profile"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Escriba su email"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control mt-1"
+                name="password"
+                id=""
+                placeholder="Escriba su contraseña"
+              />
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary px-5 mb-1 w-100">
+                Entrar
+              </button>
+            </div>
+            <div id="emailHelp" class="form-text text-center mb-1 text-dark">
+              No Registrado?
+              <a href="/admin/users/create" class="text-dark fw-bold"
+                >Cree su Cuenta</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('../../partials/footer') %>
